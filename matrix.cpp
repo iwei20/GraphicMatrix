@@ -13,15 +13,15 @@ std::ostream& operator<<(std::ostream& out, matrix& mat) {
     return out;
 }
 
-matrix matrix::dot(matrix& a, matrix& b) {
-    if(a.data[0].size() != b.data.size()) {
+matrix dot(matrix& a, matrix& b) {
+    if(a.width() != b.height()) {
         throw std::invalid_argument("Number of columns in matrix a should be equal to rows in matrix b");
     }
-    matrix result(a.data.size(), b.data[0].size());
-    for(int i = 0; i < a.data.size(); ++i) {
-        for(int j = 0; j < b.data[0].size(); ++j) {
+    matrix result(a.height(), b.width());
+    for(int i = 0; i < a.height(); ++i) {
+        for(int j = 0; j < b.width(); ++j) {
             int sum = 0;
-            for(int k = 0; k < a.data[0].size(); ++k) {
+            for(int k = 0; k < a.width(); ++k) {
                 sum += a.data[i][k] * b.data[k][j];
             }
             result[i][j] = sum;

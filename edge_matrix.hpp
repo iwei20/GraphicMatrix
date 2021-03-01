@@ -9,4 +9,5 @@ class edge_matrix : public matrix {
         edge_matrix();
 
         void add_edge(std::tuple<int, int, int> a, std::tuple<int, int, int> b);
+        using matrix::operator=;
 };
