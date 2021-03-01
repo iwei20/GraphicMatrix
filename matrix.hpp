@@ -5,7 +5,7 @@
 #include <ostream>
 
 class matrix {
-private:
+protected:
     std::vector<std::vector<int>> data;
 public:
     matrix(int rows, int cols);
