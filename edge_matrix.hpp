@@ -2,7 +2,7 @@
 
 #include "matrix.hpp"
 
-class edge_matrix : private matrix {
+class edge_matrix : public matrix {
     private:
         void add_point(std::tuple<int, int, int> point);
     public:
