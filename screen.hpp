@@ -39,7 +39,7 @@ class screen {
 
         void drawMatrix(edge_matrix& edges, std::tuple<short, short, short> color) {
             for(int i = 0; i < edges.width() - 1; ++i) {
-                drawLine({edges[1][i], edges[0][i]}, {edges[1][i], edges[0][i]}, color);
+                drawLine({edges[1][i], edges[0][i]}, {edges[1][i + 1], edges[0][i + 1]}, color);
             }
         }
 
