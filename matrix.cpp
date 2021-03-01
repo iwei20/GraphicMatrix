@@ -41,3 +41,11 @@ int matrix::get(int row, int col) {
 void matrix::set(int row, int col, int num) {
     data[row][col] = num;
 }
+
+int matrix::width() {
+    return data[0].size();
+}
+
+int matrix::height() {
+    return data.size();
+}

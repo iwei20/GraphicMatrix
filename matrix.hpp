@@ -16,4 +16,7 @@ public:
     std::vector<int>& operator[](int index);
     int get(int row, int col);
     void set(int row, int col, int num);
+
+    int width();
+    int height();
 };
