@@ -13,7 +13,7 @@ std::ostream& operator<<(std::ostream& out, matrix& mat) {
     return out;
 }
 
-matrix& matrix::dot(matrix& a, matrix& b) {
+matrix matrix::dot(matrix& a, matrix& b) {
     if(a.data[0].size() != b.data.size()) {
         throw std::invalid_argument("Number of columns in matrix a should be equal to rows in matrix b");
     }
