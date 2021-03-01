@@ -1,5 +1,5 @@
 name = main
-deps = matrix.o screen.o
+deps = matrix.o screen.o edge_matrix.o
 
 all: run
 
@@ -14,8 +14,11 @@ $(name).out: $(name).o $(deps)
 $(name).o: $(name).cpp
 	g++ -c $(name).cpp
 
-screen.o: screen.cpp screen.hpp matrix.o
-	g++ -c screen.cpp matrix.cpp
+screen.o: screen.cpp screen.hpp edge_matrix.o
+	g++ -c screen.cpp edge_matrix.cpp matrix.cpp
+
+edge_matrix.o: edge_matrix.cpp edge_matrix.hpp matrix.o
+	g++ -c edge_matrix.cpp matrix.cpp
 
 matrix.o: matrix.cpp matrix.hpp
 	g++ -c matrix.cpp
