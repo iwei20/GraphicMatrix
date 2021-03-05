@@ -29,6 +29,14 @@ class screen {
             return colorData[index];
         }
 
+        std::tuple<short, short, short> get(int row, int col) {
+            return colorData[row][col];
+        }
+
+        void set(int row, int col, std::tuple<short, short, short> new_color) {
+            colorData[row][col] = new_color;
+        }
+
         void clear() {
             for(int i = 0; i < rows; ++i) {
                 for(int j = 0; j < cols; ++j) {
