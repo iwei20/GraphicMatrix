@@ -21,7 +21,7 @@ int main() {
     for(double i = 0; i < 512; i += 512 / 8) {
         e.add_edge({0, 0, 0}, {i, 511, 0});
     }
-    e.add_edge({0, 0, 0}, {511, 511, 0});
+    e.add_edge({0, 0, 0}, {511, 510.5, 0});
 
     rect(e, 64, 64, 128, 128);
     std::cout << "Testing add_edge: \n" << e;

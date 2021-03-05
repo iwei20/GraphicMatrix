@@ -3,7 +3,7 @@
 edge_matrix::edge_matrix() : matrix(4, 0) {}
 
 void edge_matrix::add_point(std::tuple<double, double, double> point) {
-    int x, y, z;
+    double x, y, z;
     std::tie(x, y, z) = point;
     data[0].push_back(x);
     data[1].push_back(y);
