@@ -29,7 +29,7 @@ int main() {
     for(int i = 0; i < 4; ++i) {
         ident[i][i] = 1;
     }
-    e = dot(ident, e);
+    e = ident * e;
     std::cout << "Testing identity dot product: \n" << e;
     s.drawMatrix(e, {255, 255, 255});
     fout << s;

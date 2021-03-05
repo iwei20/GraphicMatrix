@@ -13,7 +13,7 @@ std::ostream& operator<<(std::ostream& out, matrix& mat) {
     return out;
 }
 
-matrix dot(matrix& a, matrix& b) {
+matrix operator*(matrix& a, matrix& b) {
     if(a.width() != b.height()) {
         throw std::invalid_argument("Number of columns in matrix a should be equal to rows in matrix b");
     }
