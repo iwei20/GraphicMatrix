@@ -10,6 +10,9 @@ class screen {
     private:
         std::array<std::array<std::tuple<short, short, short>, cols>, rows> colorData; 
     public:
+        /**
+         * Prints out contents of screen in a PPM ASCII format.
+         **/
         friend std::ostream& operator<<(std::ostream& out, screen& s) {
             out << "P3\n";
             out << rows << " " << cols << "\n";
@@ -25,18 +28,30 @@ class screen {
             return out;
         }
 
+        /**
+         * Reference to a point
+         **/
         std::array<std::tuple<short, short, short>, cols>& operator[](int index) {
             return colorData[index];
         }
 
+        /**
+         * Get the color of a point
+         **/
         std::tuple<short, short, short> get(int row, int col) {
             return colorData[row][col];
         }
 
+        /**
+         * Set the color of a point
+         **/
         void set(int row, int col, std::tuple<short, short, short> new_color) {
             colorData[row][col] = new_color;
         }
 
+        /**
+         * Fills the screen with black
+         **/
         void clear() {
             for(int i = 0; i < rows; ++i) {
                 for(int j = 0; j < cols; ++j) {
@@ -45,12 +60,18 @@ class screen {
             }
         }
 
+        /**
+         * Draws edge matrix to a screen.  Currently only takes in the x and y coordinates.
+         **/
         void drawMatrix(edge_matrix& edges, std::tuple<short, short, short> color) {
             for(int i = 0; i < edges.width() - 1; ++i) {
                 drawLine({edges[0][i], edges[1][i]}, {edges[0][i + 1], edges[1][i + 1]}, color);
             }
         }
 
+        /**
+         * Draws a line from point a to point b. Keep in mind that these points are not (row, col), but (x, y). 
+         **/ 
         void drawLine(std::pair<int, int> a, std::pair<int, int> b, std::tuple<short, short, short> color) {
             int dx = (b.first - a.first), dy = (b.second - a.second);
             
