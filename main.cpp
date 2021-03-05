@@ -15,10 +15,10 @@ int main() {
     std::ofstream fout("main.ppm");
     screen<512, 512> s;
     edge_matrix e;
-    for(int i = 0; i < 512; i += 512 / 8) {
+    for(double i = 0; i < 512; i += 512 / 8) {
         e.add_edge({0, 0, 0}, {511, i, 0});
     }
-    for(int i = 0; i < 512; i += 512 / 8) {
+    for(double i = 0; i < 512; i += 512 / 8) {
         e.add_edge({0, 0, 0}, {i, 511, 0});
     }
     e.add_edge({0, 0, 0}, {511, 511, 0});

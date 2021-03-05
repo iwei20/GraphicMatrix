@@ -4,10 +4,10 @@
 
 class edge_matrix : public matrix {
     private:
-        void add_point(std::tuple<int, int, int> point);
+        void add_point(std::tuple<double, double, double> point);
     public:
         edge_matrix();
 
-        void add_edge(std::tuple<int, int, int> a, std::tuple<int, int, int> b);
+        void add_edge(std::tuple<double, double, double> a, std::tuple<double, double, double> b);
         using matrix::operator=;
 };

@@ -2,7 +2,7 @@
 #include <tuple>
 edge_matrix::edge_matrix() : matrix(4, 0) {}
 
-void edge_matrix::add_point(std::tuple<int, int, int> point) {
+void edge_matrix::add_point(std::tuple<double, double, double> point) {
     int x, y, z;
     std::tie(x, y, z) = point;
     data[0].push_back(x);
@@ -11,7 +11,7 @@ void edge_matrix::add_point(std::tuple<int, int, int> point) {
     data[3].push_back(1);
 }
 
-void edge_matrix::add_edge(std::tuple<int, int, int> a, std::tuple<int, int, int> b) {
+void edge_matrix::add_edge(std::tuple<double, double, double> a, std::tuple<double, double, double> b) {
     add_point(a);
     add_point(b);
 };
