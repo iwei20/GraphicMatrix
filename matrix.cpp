@@ -4,7 +4,7 @@
 matrix::matrix(int rows, int cols) : data(rows, std::vector<double>(cols)) {}
 
 std::ostream& operator<<(std::ostream& out, matrix& mat) {
-    for(std::vector<double> row : mat.data) {
+    for(std::vector<double>& row : mat.data) {
         for(double item : row) {
             out << item << " ";
         }
