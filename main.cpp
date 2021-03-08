@@ -29,7 +29,16 @@ int main() {
         ident[i][i] = 1;
     }
     e = ident * e;
-    std::cout << "Testing identity dot product: \n" << e;
+    std::cout << "Testing identity matrix multiplication: \n" << e;
+
+    matrix reflect45(4, 4);
+    reflect45[0][1] = 1;
+    reflect45[1][0] = 1;
+    reflect45[2][2] = 1;
+    reflect45[3][3] = 1;
+    e = reflect45 * e;
+    std::cout << "Testing y = x reflection matrix multiplication: \n" << e;
+    
     s.drawMatrix(e, {0, 255, 0});
     fout << s;
     fout.close();
