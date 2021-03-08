@@ -30,7 +30,7 @@ int main() {
     }
     e = ident * e;
     std::cout << "Testing identity dot product: \n" << e;
-    s.drawMatrix(e, {255, 255, 255});
+    s.drawMatrix(e, {0, 255, 0});
     fout << s;
     fout.close();
 }
