@@ -39,6 +39,17 @@ int main() {
     e = reflect45 * e;
     std::cout << "Testing y = x reflection matrix multiplication: \n" << e;
     
+    matrix m1(4, 4);
+    edge_matrix m2;
+    std::vector<std::vector<double>> m1s = {{1, 4, 7, 10}, {2, 5, 8, 11}, {3, 6, 9, 12}, {1, 1, 1, 1}};
+    for(int i = 0; i < 4; ++i) {
+        for(int j = 0; j < 4; ++j) {
+            m1[i][j] = m1s[i][j];
+        }
+    }
+    m2.add_edge({1, 2, 3}, {4, 5, 6});
+    m2 = m1 * m2;
+    std::cout << "Matrix mul test on DW website: \n" << m2;
     s.drawMatrix(e, {0, 255, 0});
     fout << s;
     fout.close();
