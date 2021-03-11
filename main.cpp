@@ -48,8 +48,7 @@ int main() {
         }
     }
     m2.add_edge({1, 2, 3}, {4, 5, 6});
-    m2 = m1 * m2;
-    std::cout << "Matrix mul test on DW website: \n" << m2;
+    std::cout << "Matrix mul test on DW website: \n" << m1 * m2;
     s.drawMatrix(e, {0, 255, 0});
     fout << s;
     fout.close();

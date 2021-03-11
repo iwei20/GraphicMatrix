@@ -21,7 +21,7 @@ public:
     /**
      * Performs matrix multiplication and returns the result.
      **/
-    friend matrix operator*(matrix& a, matrix& b);
+    friend matrix& operator*(matrix& a, matrix& b);
 
     /**
      * Reference to matrix entry
